@@ -1,5 +1,7 @@
 - hosts: all
   become: yes
+  vars:
+    kube_version: 1.11.3-00
   tasks:
    - name: install Docker
      apt:
@@ -25,19 +27,19 @@
 
    - name: install kubelet
      apt:
-       name: kubelet
+       name: kubelet={{ kube_version }}
        state: present
        update_cache: true
 
    - name: install kubeadm
      apt:
-       name: kubeadm
+       name: kubeadm={{ kube_version }}
        state: present
 
 - hosts: master
   become: yes
   tasks:
-   - name: install kubectl
+   - name: install kubectl={{ kube_version }}
      apt:
        name: kubectl
        state: present
