@@ -2,7 +2,7 @@ Create a Kubernetes cluster on Digital Ocean with ansible.
 
 # Knowledge
 
-- `ANSIBLE_HOST_KEY_CHECKING=False`
+- `export ANSIBLE_HOST_KEY_CHECKING=False`
 
 - `ansible all -m ping -i hosts`
 
