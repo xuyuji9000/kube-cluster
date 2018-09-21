@@ -1,10 +1,16 @@
 Create a Kubernetes cluster on Digital Ocean with ansible.
 
-# Knowledge
+# Ansible
 
 - `export ANSIBLE_HOST_KEY_CHECKING=False`
 
 - `ansible all -m ping -i hosts`
+
+# Terraform
+
+- `export DIGITALOCEAN_TOKEN=digitalocean_token`
+
+- `cat ~/.config/doctl/config.yaml | grep token`
 
 
 # Reference
