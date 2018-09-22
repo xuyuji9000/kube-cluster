@@ -12,6 +12,8 @@ Create a Kubernetes cluster on Digital Ocean with ansible.
 
 - `cat ~/.config/doctl/config.yaml | grep token`
 
+- `export TF_VAR_do_token=digitalocean_token`
+
 
 # Reference
 
