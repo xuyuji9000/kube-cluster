@@ -15,6 +15,7 @@ resource "digitalocean_droplet" "kube-master" {
   image     = "ubuntu-16-04-x64"
   region    = "sgp1"
   ssh_keys  = ["22720452"]
+  monitoring= true
   user_data = "${file("init.sh")}"
 }
 
