@@ -1,4 +1,4 @@
-Create a Kubernetes cluster on Digital Ocean with ansible.
+Create a Kubernetes cluster on Digital Ocean with ansible and terraform.
 
 # Setup
 
@@ -36,6 +36,10 @@ SSH into master node, run `kubectl get nodes`, should have result like this:
 - `cat ~/.config/doctl/config.yaml | grep token`
 
 - `export TF_VAR_do_token=digitalocean_token`
+
+## DigitalOcean Cli
+
+- `doctl compute droplet delete -f $(doctl compute droplet list --format Name --no-header)`
 
 
 # Reference
