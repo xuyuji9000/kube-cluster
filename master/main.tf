@@ -16,7 +16,7 @@ resource "digitalocean_droplet" "kube-master" {
   region    = "sgp1"
   ssh_keys  = ["22720452"]
   monitoring= true
-  user_data = "${file("master-user-data.sh")}"
+  user_data = "${file("${path.module}/master-user-data.sh")}"
 }
 
 resource "digitalocean_firewall" "kube-master" {
