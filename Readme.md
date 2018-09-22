@@ -1,12 +1,34 @@
 Create a Kubernetes cluster on Digital Ocean with ansible.
 
-# Ansible
+# Setup
+
+1. Under **master** directory, `terraform apply`, this step create master node with dependency.
+
+2. Under **workder** directory, `terraform apply`, this step create worker node with dependency.
+
+3. Create `hosts` file according to `hosts.example`, update master and worker public ip
+
+4. Add cluster network, `ansible-playbook -i hosts master.yml`
+
+4. Let worker join the cluster, `ansible-playbook -i hosts workers.yml`
+
+
+# Test
+
+SSH into master node, run `kubectl get nodes`, should have result like this: 
+
+
+
+
+# Utilities
+
+## Ansible
 
 - `export ANSIBLE_HOST_KEY_CHECKING=False`
 
 - `ansible all -m ping -i hosts`
 
-# Terraform
+## Terraform
 
 - `export DIGITALOCEAN_TOKEN=digitalocean_token`
 
