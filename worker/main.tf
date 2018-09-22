@@ -11,7 +11,7 @@ resource "digitalocean_droplet" "kube-worker" {
   region    = "sgp1"
   ssh_keys  = ["22720452"]
   monitoring= true
-  user_data = "${file("worker-user-data.sh")}"
+  user_data = "${file("${path.module}/worker-user-data.sh")}"
 }
 
 resource "digitalocean_firewall" "kube-worker" {

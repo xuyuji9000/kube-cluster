@@ -6,3 +6,10 @@ module "master" {
 
   do_token  = "${var.do_token}"
 }
+
+module "worker" {
+
+  source    = "./worker"
+
+  do_token  = "${var.do_token}"
+}
