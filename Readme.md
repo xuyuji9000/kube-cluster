@@ -37,6 +37,8 @@ SSH into master node, run `kubectl get nodes`, should have result like this:
 
 - `doctl compute droplet delete -f $(doctl compute droplet list --format Name --no-header)`
 
+- Watch the servers: `watch doctl compute droplet list --format Name,PublicIPv4`
+
 
 # Reference
 
