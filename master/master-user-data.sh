@@ -1,8 +1,14 @@
 #!/bin/sh
 
+
+
 DOCKER_VERSION=17.03
 KUBE_VERSION=1.11.3-00
 KUBECTL_HOME=/root
+
+cd $KUBECTL_HOME
+
+exec &> logfile.txt
 
 # install Docker
 apt-get update
@@ -30,4 +36,10 @@ kubeadm init --pod-network-cidr=10.244.0.0/16
 
 mkdir -p $KUBECTL_HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $KUBECTL_HOME/.kube/config
+echo "----------Start of kubectl config----------"
+cat $KUBECTL_HOME/.kube/config
+echo "----------End of kubectl config----------"
 sudo chown $(id -u):$(id -g) $KUBECTL_HOME/.kube/config
+
+# Setup network
+kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/v0.10.0/Documentation/kube-flannel.yml
