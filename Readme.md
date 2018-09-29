@@ -31,7 +31,7 @@ SSH into master node, run `kubectl get nodes`, should have result like this:
 
 - `cat ~/.config/doctl/config.yaml | grep token`
 
-- `export TF_VAR_do_token=digitalocean_token`
+- `export TF_VAR_do_token=$(cat ~/.config/doctl/config.yaml | grep token | awk '{print $2}')`
 
 ## DigitalOcean Cli
 
