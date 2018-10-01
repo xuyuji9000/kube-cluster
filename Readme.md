@@ -46,3 +46,4 @@ SSH into master node, run `kubectl get nodes`, should have result like this:
 
 3. [Creating a single master cluster with kubeadm](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/)
 
+4. [csi-digitalocean](https://github.com/digitalocean/csi-digitalocean)
