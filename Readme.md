@@ -24,22 +24,6 @@ Create a Kubernetes cluster on Digital Ocean with ansible and terraform.
 - `./utitlity/join-workers.sh test` test servers under inventory
 
 
-
-# Utilities
-
-## Terraform
-
-- `export DIGITALOCEAN_TOKEN=digitalocean_token`
-
-- `export TF_VAR_do_token=$(cat ~/.config/doctl/config.yaml | grep token | awk '{print $2}')`
-
-## DigitalOcean Cli
-
-- `doctl compute droplet delete -f $(doctl compute droplet list --format Name --no-header)`
-
-- Watch the servers: `watch doctl compute droplet list --format Name,PublicIPv4`
-
-
 # Reference
 
 1. [How To Create a Kubernetes 1.11 Cluster Using Kubeadm on Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/how-to-create-a-kubernetes-1-11-cluster-using-kubeadm-on-ubuntu-18-04)
