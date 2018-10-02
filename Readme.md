@@ -2,11 +2,15 @@ Create a Kubernetes cluster on Digital Ocean with ansible and terraform.
 
 # Setup
 
-1. `./create-infra.sh` creates one master and one worker.
+1. `./utility/infra.sh apply` creates one master and one worker with firewalls.
 
 2. Create `hosts` file according to `hosts.example`, update master and worker public ip
 
 3. Let worker join the cluster, `ansible-playbook -i hosts workers.yml`
+
+# Destroy
+
+1. `./utility/infra.sh destroy` destroies the provisioned resources.
 
 
 # Test
