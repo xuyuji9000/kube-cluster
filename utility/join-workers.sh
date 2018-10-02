@@ -1,6 +1,10 @@
 #!/bin/sh
 
 # $1 : action name
+if [ -z $1 ]
+then
+    echo "Does not add parameter."; exit 1;
+fi
 
 export ANSIBLE_HOST_KEY_CHECKING=False
 
