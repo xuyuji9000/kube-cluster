@@ -10,7 +10,7 @@ Create a Kubernetes cluster on Digital Ocean with ansible and terraform.
 
 3. Create `hosts` file according to `hosts.example`, update master and worker public ip
 
-4. Let worker join the cluster, `ansible-playbook -i hosts workers.yml`
+4. `./utility/infra.sh join` lets workers join the cluster
 
 ## Destroy
 
@@ -23,7 +23,7 @@ Create a Kubernetes cluster on Digital Ocean with ansible and terraform.
 
     ![image](https://user-images.githubusercontent.com/4877346/45913656-2700af80-be69-11e8-854a-8882bff1de92.png)
 
-- `./utitlity/join-workers.sh test` test servers under inventory
+- `./utility/infra.sh test` test servers under inventory
 
 # Jenkins
 
