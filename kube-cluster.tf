@@ -12,4 +12,6 @@ module "worker" {
   source    = "./worker"
 
   do_token  = "${var.do_token}"
+
+  droplet_number = 2
 }

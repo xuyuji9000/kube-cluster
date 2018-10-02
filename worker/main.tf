@@ -1,23 +1,27 @@
 variable "do_token" {}
 
+variable "droplet_number" {}
+
 provider "digitalocean" {
   token = "${var.do_token}"
 }
 
 resource "digitalocean_droplet" "kube-worker" {
-  name      = "worker-1"
+  name      = "worker-${count.index}"
   size      = "4gb"
   image     = "ubuntu-16-04-x64"
   region    = "sgp1"
   ssh_keys  = ["22720452"]
   monitoring= true
   user_data = "${file("${path.module}/worker-user-data.sh")}"
+
+  count     = "${var.droplet_number}"
 }
 
 resource "digitalocean_firewall" "kube-worker" {
   name = "worker"
 
-  droplet_ids = ["${digitalocean_droplet.kube-worker.id}"]
+  droplet_ids = ["${digitalocean_droplet.kube-worker.*.id}"]
 
   inbound_rule = [
     {
