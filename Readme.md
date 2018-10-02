@@ -17,19 +17,15 @@ Create a Kubernetes cluster on Digital Ocean with ansible and terraform.
 
 # Test
 
-SSH into master node, run `kubectl get nodes`, should have result like this:
+- SSH into master node, run `kubectl get nodes`, should have result like this:
 
-![image](https://user-images.githubusercontent.com/4877346/45913656-2700af80-be69-11e8-854a-8882bff1de92.png)
+    ![image](https://user-images.githubusercontent.com/4877346/45913656-2700af80-be69-11e8-854a-8882bff1de92.png)
+
+- `./utitlity/join-workers.sh test` test servers under inventory
 
 
 
 # Utilities
-
-## Ansible
-
-- `export ANSIBLE_HOST_KEY_CHECKING=False`
-
-- `ansible all -m ping -i hosts`
 
 ## Terraform
 
