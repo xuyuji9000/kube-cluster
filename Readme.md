@@ -4,7 +4,7 @@ Create a Kubernetes cluster on Digital Ocean with ansible and terraform.
 
 1. `./utility/infra.sh apply` creates one master and one worker with firewalls.
 
-2. `./utility/add-kubectl-control.sh` add remote cluster **/root/.kube/config** to local *kubectl*
+2. `./utility/add-kubectl-control.sh master-ip` add remote cluster **/root/.kube/config** to local *kubectl*
 
 3. Create `hosts` file according to `hosts.example`, update master and worker public ip
 
