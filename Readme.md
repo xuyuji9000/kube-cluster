@@ -27,6 +27,19 @@ Create a Kubernetes cluster on Digital Ocean with ansible and terraform.
 
 # Jenkins
 
+1. Create service account tiller
+
+    `kubectl create -f ./k8s/rbac-config.yaml`
+
+2. Init helm with service account
+
+    `helm init --service-account tiller`
+
+3. Deploy Jenkins
+
+    `helm install --name v1-jenkins stable/jenkins`
+
+
 
 # Reference
 
@@ -37,3 +50,5 @@ Create a Kubernetes cluster on Digital Ocean with ansible and terraform.
 3. [Creating a single master cluster with kubeadm](https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/)
 
 4. [csi-digitalocean](https://github.com/digitalocean/csi-digitalocean)
+
+5. [Quickstart Guide](https://docs.helm.sh/using_helm/#quickstart)
