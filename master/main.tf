@@ -54,6 +54,10 @@ resource "digitalocean_firewall" "kube-master" {
       protocol           = "tcp"
       port_range         = "10252"
       source_addresses   = ["0.0.0.0/0", "::/0"]
+    },
+    {
+      protocol                = "icmp"
+      source_addresses   = ["0.0.0.0/0", "::/0"]
     }
   ]
 

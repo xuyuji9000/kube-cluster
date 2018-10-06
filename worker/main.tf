@@ -38,6 +38,10 @@ resource "digitalocean_firewall" "kube-worker" {
       protocol           = "tcp"
       port_range         = "30000-32767"
       source_addresses   = ["0.0.0.0/0", "::/0"]
+    },
+    {
+      protocol           = "icmp"
+      source_addresses   = ["0.0.0.0/0", "::/0"]
     }
   ]
 
