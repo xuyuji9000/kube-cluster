@@ -4,10 +4,10 @@ provider "digitalocean" {
   token = "${var.do_token}"
 }
 
-resource "digitalocean_ssh_key" "default" {
-  name       = "Terraform Example"
-  public_key = "${file("/Users/yogiman/.ssh/id_rsa.pub")}"
-}
+# resource "digitalocean_ssh_key" "default" {
+#   name       = "Terraform Example"
+#   public_key = "${file("/Users/yogiman/.ssh/id_rsa.pub")}"
+# }
 
 resource "digitalocean_droplet" "kube-master" {
   name      = "master-1"
