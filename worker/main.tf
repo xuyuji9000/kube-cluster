@@ -9,11 +9,11 @@ provider "digitalocean" {
 resource "digitalocean_droplet" "kube-worker" {
   name      = "worker-${count.index}"
   size      = "4gb"
-  image     = "ubuntu-16-04-x64"
+  image     = "38960202"
   region    = "sgp1"
   ssh_keys  = ["22720452"]
   monitoring= true
-  user_data = "${file("${path.module}/worker-user-data.sh")}"
+  # user_data = "${file("${path.module}/worker-user-data.sh")}"
 
   count     = "${var.droplet_number}"
 }
