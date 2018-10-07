@@ -10,7 +10,7 @@
     "provisioners": [{
         "type": "shell",
         "scripts": [
-            "master/master-user-data.sh"
+            "{{template_dir}}/packer.sh"
         ]
     }]
 }
