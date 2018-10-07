@@ -7,11 +7,11 @@ module "master" {
   do_token  = "${var.do_token}"
 }
 
-# module "worker" {
+module "worker" {
 
-#   source    = "./worker"
+  source    = "./worker"
 
-#   do_token  = "${var.do_token}"
+  do_token  = "${var.do_token}"
 
-#   droplet_number = 2
-# }
+  droplet_number = 2
+}
