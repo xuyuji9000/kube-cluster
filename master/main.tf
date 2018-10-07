@@ -16,7 +16,31 @@ resource "digitalocean_droplet" "kube-master" {
   region    = "sgp1"
   ssh_keys  = ["22720452"]
   monitoring= true
-  user_data = "${file("${path.module}/user-data.sh")}"
+  # user_data = "${file("${path.module}/user-data.sh")}"
+
+  provisioner "file" {
+    connection {
+      type     = "ssh"
+      user     = "root"
+      private_key = "${file("/Users/yogiman/.ssh/id_rsa")}"
+    }
+
+    source      = "${path.module}/user-data.sh"
+    destination = "/tmp/user-data.sh"
+  }
+
+  provisioner "remote-exec" {
+    connection {
+      type     = "ssh"
+      user     = "root"
+      private_key = "${file("/Users/yogiman/.ssh/id_rsa")}"
+    }
+
+    inline = [
+      "chmod +x /tmp/user-data.sh",
+      "/tmp/user-data.sh",
+    ]
+  }
 }
 
 resource "digitalocean_firewall" "kube-master" {
