@@ -12,11 +12,11 @@ provider "digitalocean" {
 resource "digitalocean_droplet" "kube-master" {
   name      = "master-1"
   size      = "4gb"
-  image     = "38930364"
+  image     = "38948606"
   region    = "sgp1"
   ssh_keys  = ["22720452"]
   monitoring= true
-  # user_data = "${file("${path.module}/master-user-data.sh")}"
+  user_data = "${file("${path.module}/user-data.sh")}"
 }
 
 resource "digitalocean_firewall" "kube-master" {
