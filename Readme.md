@@ -39,6 +39,14 @@ Create a Kubernetes cluster on Digital Ocean with ansible and terraform.
 
     `helm install --name v1-jenkins stable/jenkins`
 
+# Packer
+
+- Set DIGITALOCEAN_API_TOKEN: `export DIGITALOCEAN_API_TOKEN=$(cat ~/.config/doctl/config.yaml | grep token | awk '{print $2}')`
+
+- Build image: `packer build packer.json`
+
+- List images: `doctl compute image list`
+
 
 
 # Reference
