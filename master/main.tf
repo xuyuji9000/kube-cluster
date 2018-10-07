@@ -12,7 +12,7 @@ provider "digitalocean" {
 resource "digitalocean_droplet" "kube-master" {
   name      = "master-1"
   size      = "4gb"
-  image     = "38948606"
+  image     = "38963259"
   region    = "sgp1"
   ssh_keys  = ["22720452"]
   monitoring= true

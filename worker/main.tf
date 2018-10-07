@@ -9,7 +9,7 @@ provider "digitalocean" {
 resource "digitalocean_droplet" "kube-worker" {
   name      = "worker-${count.index}"
   size      = "4gb"
-  image     = "38960202"
+  image     = "38963259"
   region    = "sgp1"
   ssh_keys  = ["22720452"]
   monitoring= true
