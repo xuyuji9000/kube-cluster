@@ -43,7 +43,7 @@ Create a Kubernetes cluster on Digital Ocean with ansible and terraform.
 
 - Set DIGITALOCEAN_API_TOKEN: `export DIGITALOCEAN_API_TOKEN=$(cat ~/.config/doctl/config.yaml | grep token | awk '{print $2}')`
 
-- Build image: `packer build packer.json`
+- Build image: `packer build image/packer.json`
 
 - List images: `doctl compute image list`
 
