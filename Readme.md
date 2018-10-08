@@ -18,15 +18,6 @@ Create a Kubernetes cluster on Digital Ocean with ansible and terraform.
 
 1. `./utility/infra.sh destroy` destroies the provisioned resources.
 
-
-## Test
-
-- SSH into master node, run `kubectl get nodes`, should have result like this:
-
-    ![image](https://user-images.githubusercontent.com/4877346/45913656-2700af80-be69-11e8-854a-8882bff1de92.png)
-
-- `./utility/infra.sh test` test servers under inventory
-
 # Jenkins
 
 1. Create service account tiller
@@ -41,7 +32,7 @@ Create a Kubernetes cluster on Digital Ocean with ansible and terraform.
 
     `helm install --name v1-jenkins stable/jenkins`
 
-# Packer
+# Build Image
 
 - Set DIGITALOCEAN_API_TOKEN: `export DIGITALOCEAN_API_TOKEN=$(cat ~/.config/doctl/config.yaml | grep token | awk '{print $2}')`
 
