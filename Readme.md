@@ -12,6 +12,8 @@ Create a Kubernetes cluster on Digital Ocean with ansible and terraform.
 
 4. `./utility/infra.sh join` lets workers join the cluster
 
+5. Get Cluster Nodes: `ssh root@206.189.157.167 "kubectl get nodes"`
+
 ## Destroy
 
 1. `./utility/infra.sh destroy` destroies the provisioned resources.
