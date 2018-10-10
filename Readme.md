@@ -41,6 +41,13 @@ Create a Kubernetes cluster on Digital Ocean with ansible and terraform.
 - List images: `doctl compute image list`
 
 
+# Add Volume
+
+1. Apply digitalocean secret
+
+    `kubectl create -f ./k8s/digitalocean-secret.yml`
+
+
 
 # Reference
 
