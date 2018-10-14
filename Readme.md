@@ -32,6 +32,10 @@ Create a Kubernetes cluster on Digital Ocean with ansible and terraform.
 
     `helm install --name v1-jenkins stable/jenkins`
 
+3. Delete Jenkins
+
+    `helm delete v1-jenkins`
+
 # Build Image
 
 - Set DIGITALOCEAN_API_TOKEN: `export DIGITALOCEAN_API_TOKEN=$(cat ~/.config/doctl/config.yaml | grep token | awk '{print $2}')`
